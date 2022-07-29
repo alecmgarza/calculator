@@ -18,8 +18,11 @@ function operate(operator, a, b) {
     return operator(a, b);
 };
 
-function display(input) {
-    const display = document.querySelector('#display');
+const display = document.querySelector('#display');
+let displayValue = display.textContent;
+
+function displayNumber(input) {
+    display.textContent += ''; 
     display.textContent += input;
 }
 
@@ -27,6 +30,12 @@ const numbers = document.querySelectorAll('.number');
 
 numbers.forEach((number) => {
     number.addEventListener('click', () => {
-        display(number.textContent);
+        displayNumber(number.textContent);
     })
+})
+
+const clearBtn = document.querySelector('.clear');
+
+clearBtn.addEventListener('click', () => {
+    display.textContent = '';
 })
