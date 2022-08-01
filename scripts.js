@@ -24,6 +24,7 @@ function operate(operator, a, b) {
     } else if (operator === 'divide') {
         divide(a, b);
     }
+
     firstNumber = (+display.textContent);
 };
 
@@ -52,11 +53,9 @@ numbers.forEach((number) => {
 })
 
 const operations = document.querySelectorAll('.operations');
-const equals = document.querySelector('.calculate');
 
 operations.forEach((operation) => {
     operation.addEventListener('click', () => {
-        /*firstNumber = (+display.textContent);*/
         display.textContent = '';
         if (firstNumber && secondNumber) {
             operate(operator, firstNumber, secondNumber);
@@ -66,8 +65,9 @@ operations.forEach((operation) => {
     })
 })
 
+const equals = document.querySelector('.calculate');
+
 equals.addEventListener('click', () => {
-    /*secondNumber = (+display.textContent);*/
     console.log(firstNumber);
     console.log(operator);
     console.log(secondNumber);
@@ -82,5 +82,3 @@ clearBtn.addEventListener('click', () => {
     secondNumber = 0;
     operator = null;
 })
-
-// calculator cannot perform multistep operations yet...
