@@ -11,7 +11,11 @@ function multiply(a, b) {
 };
 
 function divide(a, b) {
-    display.textContent = a / b;
+    if (b == 0) {
+        display.textContent = 'ERROR';
+    } else {
+        display.textContent = a / b;
+    };
 };
 
 function operate(operator, a, b) {
